@@ -1,6 +1,11 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
+  --color-default-background: #1f1f1f;
+
   --color-secondary-950: #292929;
   --color-secondary-900: #3d3d3d;
   --color-secondary-800: #464646;
@@ -24,6 +29,25 @@
   --color-primary-200: #c2daf5;
   --color-primary-100: #e4edfa;
   --color-primary-50: #f2f7fd;
+
+  --color-accent-200: #ffdca5;
+
+  --font-default: "Inter", sans-serif;
+}
+
+@layer base {
+  * {
+    @apply m-0 p-0;
+    @apply font-default;
+  }
+
+  body {
+    @apply h-screen w-screen;
+  }
+
+  #root {
+    @apply h-full w-full bg-black;
+  }
 }
 
 @layer utilities {
